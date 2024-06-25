@@ -9,7 +9,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // 压缩代码，去�
 
 const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i // 开启gzip压缩， 按需写入
 const isProduction = process.env.NODE_ENV === 'production'
-const BASE_URL = process.env.NODE_ENV === 'production' ? '/front/' : './'
+const BASE_URL = process.env.NODE_ENV === 'production' ? '/vue2/' : './'
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
