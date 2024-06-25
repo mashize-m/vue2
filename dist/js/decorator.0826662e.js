@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["decorator"],{"210e":function(n,o,e){e.r(o),e("5c96");var t={name:"decorator",data:()=>({}),methods:{}};e=e("2877"),e=Object(e.a)(t,(function(){var n=this,o=n._self._c;return o("div",[o("el-button",{on:{click:function(o){return n.onClick(1122)}}},[n._v("decorator")])],1)}),[],!1,null,"e09e0f18",null);o.default=e.exports}}]);

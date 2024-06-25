@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["canvasAnimate"],{f7ac:function(n,a,e){e.r(a);e=e("2877"),e=Object(e.a)({name:"animateCanvas"},(function(){return(0,this._self._c)("div",[this._v("canvas绘制动画---还没开始")])}),[],!1,null,"3a739480",null);a.default=e.exports}}]);

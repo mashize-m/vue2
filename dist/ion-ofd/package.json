@@ -1,0 +1,49 @@
+{
+  "name": "ion-ofd",
+  "version": "0.2.7",
+  "main": "lib/ofd.umd.min.js",
+  "author": "dltech21",
+  "description": "ofd渲染",
+  "keywords": [
+    "ion-ofd",
+    "ion-ofd.js",
+    "ofd渲染"
+  ],
+  "private": false,
+  "scripts": {
+    "lint": "vue-cli-service lint",
+    "build": "vue-cli-service build --target lib --name ofd --dest lib ./src/ofd/ofd.js"
+  },
+  "dependencies": {
+    "@lapo/asn1js": "^1.2.1",
+    "core-js": "^3.6.5",
+    "ofd-xml-parser": "^0.0.6",
+    "js-md5": "^0.7.3",
+    "js-sha1": "^0.6.0",
+    "jsrsasign": "^9.1.9",
+    "jsrsasign-util": "^1.0.0",
+    "jszip": "^3.5.0",
+    "jszip-utils": "^0.1.0",
+    "sm-crypto": "^0.2.1",
+    "web-streams-polyfill": "^2.1.1",
+    "x2js": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DLTech21/ofd.js"
+  },
+  "license": "Apache-2.0",
+  "funding": {
+    "type": "paypal",
+    "url": "https://paypal.me/donaltong"
+  }
+}

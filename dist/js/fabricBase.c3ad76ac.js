@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["fabricBase"],{9312:function(a,n,e){e.r(n);e=e("2877"),e=Object(e.a)({name:"fabricBase"},(function(){return(0,this._self._c)("div",[this._v("fabricBase")])}),[],!1,null,"3bf7d0a4",null);n.default=e.exports}}]);
