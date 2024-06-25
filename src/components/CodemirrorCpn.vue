@@ -50,7 +50,7 @@ export default {
   methods: {
     init (path) {
       console.log('path:', path)
-      fetch(`.${path}/index.vue`).then(response => {
+      fetch(`/vue2${path}/index.vue`).then(response => {
         response.text().then(r => {
           this.code = r
         })

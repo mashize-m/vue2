@@ -8,8 +8,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // 压缩代码，去�
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin // 引入打包分析插件
 
 const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i // 开启gzip压缩， 按需写入
-const isProduction = process.env.NODE_ENV === 'production'
-const BASE_URL = process.env.NODE_ENV === 'production' ? '/vue2/' : './'
+const isProduction = process.env.NODE_ENV !== 'development'
+const BASE_URL = process.env.NODE_ENV === 'development' ? '/vue2/' : '/vue2/'
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
@@ -17,7 +17,6 @@ const webpack = require('webpack')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
-console.log('path.resolve(__dirname):', path.resolve(__dirname))
 
 module.exports = {
   // 其他配置可以走默认

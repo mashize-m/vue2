@@ -32,7 +32,7 @@
     <span class="detail">{{ alignContentInfo }}</span>
     <br />
 
-    <div class="demo" :class="customStyle" id="demo" ref="demo">
+    <div class="demo" id="demo" ref="demo">
       <div class="box" v-for="(item, index) in count" :key="index"></div>
     </div>
     <p></p>
