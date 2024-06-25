@@ -22,7 +22,7 @@ console.log('path.resolve(__dirname):', path.resolve(__dirname))
 module.exports = {
   // 其他配置可以走默认
   publicPath: BASE_URL, // 基本路径
-  outputDir: 'dist', // 输出文件目录
+  outputDir: 'docs', // 输出文件目录
   lintOnSave: true, // 是否在开发环境下每次保存代码时都启用 eslint验证。
   productionSourceMap: false, // 生产环境是否生成 sourceMap 文件
   // assetsDir: '',  // 静态文件要不要放在一个文件夹里，默认值是‘’，有需要可以自己改
