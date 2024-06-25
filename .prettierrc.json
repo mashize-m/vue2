@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "semi": false,
+  "comma": false,
+  "printWidth": 110,
+  "eslintIntegration": true,
+  "stylelintIntegration": true,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "ignore",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "files.insertFinalNewline": true,
+  "useTabs": false,
+  "endOfLine": "auto",
+  "ignorePath": ".gnore",
+  "trailingComma": "none"
+}
