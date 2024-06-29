@@ -16,6 +16,13 @@
         >
           <div>{{ col.name }}</div>
           <div>{{ col.byname }}</div>
+          <!-- <template v-if="col.type === 'label'">
+            <div>{{ col.name }}</div>
+            <div>{{ col.byname }}</div>
+          </template>
+          <template v-if="col.type === 'input'">
+            <el-input v-model="form[col.field]"></el-input>
+          </template> -->
           <template v-if="col.description">
             <div v-for="(desc, index) in col.description" :key="index">{{ desc }}</div>
           </template>
@@ -33,6 +40,11 @@ export default {
     rows: {
       type: Array,
       default: () => []
+    }
+  },
+  data () {
+    return {
+      form: {}
     }
   }
 }

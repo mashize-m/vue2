@@ -126,11 +126,11 @@ export default {
               name: '整治项目',
               byname: '基本信息',
               title: true,
-              span: 4,
+              span: 2,
               height: BASE_HEIGHT * 4 + 'px'// 合并单元格，这里的高度是 40 * 3
             },
             {
-              span: 20,
+              span: 22,
               height: BASE_HEIGHT * 4 + 'px',
               slotName: 'row1_right'
             }
@@ -142,11 +142,11 @@ export default {
               name: '调出永久',
               byname: '基本农田信息',
               title: true,
-              span: 4,
+              span: 2,
               height: BASE_HEIGHT * 5 + 'px'// 合并单元格，这里的高度是 40 * 3
             },
             {
-              span: 20,
+              span: 22,
               height: BASE_HEIGHT * 5 + 'px',
               slotName: 'row2_right'
             }
@@ -158,11 +158,11 @@ export default {
               name: '调入永久',
               byname: '基本农田信息',
               title: true,
-              span: 4,
+              span: 2,
               height: BASE_HEIGHT * 5 + 'px'// 合并单元格，这里的高度是 40 * 3
             },
             {
-              span: 20,
+              span: 22,
               height: BASE_HEIGHT * 5 + 'px',
               slotName: 'row3_right'
             }
@@ -173,11 +173,11 @@ export default {
             {
               name: '审查结果',
               title: true,
-              span: 4,
+              span: 2,
               height: BASE_HEIGHT * 8 + 'px'// 合并单元格，这里的高度是 40 * 3
             },
             {
-              span: 20,
+              span: 22,
               height: BASE_HEIGHT * 8 + 'px',
               slotName: 'row4_right'
             }
@@ -205,8 +205,8 @@ export default {
       row1_right: [
         {
           cols: [
-            { name: '整治项目名称', title: true, span: 12 },
-            { name: 'value-1', span: 12 }
+            { type: 'label', name: '整治项目名称', title: true, span: 12 },
+            { type: 'input', field: 'zzxmmc', name: 'value-1', span: 12 }
           ]
         },
         {
