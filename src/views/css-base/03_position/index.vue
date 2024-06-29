@@ -72,7 +72,7 @@ export default {
     .child2 {
       position: fixed;
       top: 15%;
-      left: 40%;
+      left: 70%;
     }
   }
   .parent3 {

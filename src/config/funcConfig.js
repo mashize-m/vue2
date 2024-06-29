@@ -70,5 +70,10 @@ export default [
     path: base + 'viewOfd',
     name: '14_ofd文件预览&查看MD文件',
     component: () => import(/* webpackChunkName: 'viewOfd' */ '@/views/func/14_viewOfd')
+  },
+  {
+    path: base + 'customTable',
+    name: '15_自定义复杂表格功能',
+    component: () => import(/* webpackChunkName: 'customTable' */ '@/views/func/15_customTable')
   }
 ]

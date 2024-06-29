@@ -28,7 +28,7 @@
       </el-scrollbar>
       <div class="main">
         <router-view class="left"></router-view>
-        <CodemirrorCpn :path="path" v-if="isShow"></CodemirrorCpn>
+        <!-- <CodemirrorCpn :path="path" v-if="isShow"></CodemirrorCpn> -->
       </div>
     </div>
   </div>
@@ -36,13 +36,13 @@
 
 <script>
 import { menuList } from '@/config/menuConfig.js'
-import CodemirrorCpn from '@/components/CodemirrorCpn'
+// import CodemirrorCpn from '@/components/CodemirrorCpn'
 
 export default {
   name: 'AdminLayout',
-  components: {
-    CodemirrorCpn
-  },
+  // components: {
+  //   CodemirrorCpn
+  // },
   data () {
     return {
       defaultSelectMenu: '',

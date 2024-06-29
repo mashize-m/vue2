@@ -1,44 +1,75 @@
 <template>
-  <div class="page">
-    <p><b>flex基础属性</b></p>
-    <b>主轴方向：</b>
-    <el-select v-model="direction" placeholder="请选择" @change="directionChange">
-      <el-option v-for="k in directionOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ directionInfo }}</span>
-    <br />
-    <b>主轴是否换行：</b>
-    <el-select v-model="flexWrap" placeholder="请选择" @change="flexWrapChange">
-      <el-option v-for="k in flexWrapOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ flexWrapInfo }}</span>
-    <br />
-    <b>主轴对齐方式：</b>
-    <el-select v-model="justify" placeholder="请选择" @change="justifyChange">
-      <el-option v-for="k in justifyOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ justifyInfo }}</span>
-    <br />
-    <b>交叉轴对齐方式（用在单行,即不换行情况下）：</b>
-    <el-select v-model="alignItems" placeholder="请选择" @change="alignItemsChange">
-      <el-option v-for="k in alignItemsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ alignItemsInfo }}</span>
-    <br />
-    <b>交叉轴对齐方式（用在多行）：</b>
-    <el-select v-model="alignContent" placeholder="请选择" @change="alignContentChange">
-      <el-option v-for="k in alignContentOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ alignContentInfo }}</span>
-    <br />
-
-    <div class="demo" id="demo" ref="demo">
-      <div class="box" v-for="(item, index) in count" :key="index"></div>
+  <div class="pagebox">
+    <div class="page">
+      <p><b>flex基础属性</b></p>
+      <div class="demo" id="demo" ref="demo">
+        <div class="box" v-for="(item, index) in count" :key="index"></div>
+      </div>
+      <p></p>
+      <b>主轴方向：</b>
+      <el-select v-model="direction" placeholder="请选择" @change="directionChange">
+        <el-option v-for="k in directionOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ directionInfo }}</span>
+      <br />
+      <b>主轴是否换行：</b>
+      <el-select v-model="flexWrap" placeholder="请选择" @change="flexWrapChange">
+        <el-option v-for="k in flexWrapOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ flexWrapInfo }}</span>
+      <br />
+      <b>主轴对齐方式：</b>
+      <el-select v-model="justify" placeholder="请选择" @change="justifyChange">
+        <el-option v-for="k in justifyOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ justifyInfo }}</span>
+      <br />
+      <b>交叉轴对齐方式（用在单行,即不换行情况下）：</b>
+      <el-select v-model="alignItems" placeholder="请选择" @change="alignItemsChange">
+        <el-option v-for="k in alignItemsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ alignItemsInfo }}</span>
+      <br />
+      <b>交叉轴对齐方式（用在多行）：</b>
+      <el-select v-model="alignContent" placeholder="请选择" @change="alignContentChange">
+        <el-option v-for="k in alignContentOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ alignContentInfo }}</span>
+      <br />
     </div>
-    <p></p>
-    <b>特殊布局：每行固定N个元素(例如:6)</b>
-    <div class="demo1">
-      <div class="box1" v-for="(item, index) in count" :key="index"></div>
+    <div class="code">
+      <p></p>
+      <b>特殊布局：每行固定N个元素(例如:6)</b>
+      <div class="demo1">
+        <div class="box1" v-for="(item, index) in count" :key="index"></div>
+      </div>
+      <pre v-highlight>
+        <code>
+  .demo1 {
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; // 溢出换行
+    justify-content: flex-start;
+    align-content: flex-start;
+    .box1 {
+      background: pink;
+      flex: 0 0 calc(90% / 6); // 对剩余空间的（放大、缩小、初始大小比例）
+      height: 100px;
+      margin-right: calc(10% / 6);
+      margin-top: 10px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+    }
+    :nth-child(even) {
+      background: skyblue;
+    }
+  }
+        </code>
+      </pre>
     </div>
   </div>
 </template>
@@ -124,53 +155,61 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.page {
-  text-align: left;
-  .detail {
-    padding: 10px 0;
-    span {
-      font-weight: bold;
+.pagebox {
+  display: flex;
+  box-sizing: border-box;
+  gap: 50px;
+  .page {
+    flex: 1;
+    overflow: auto;
+    .detail {
+      padding: 10px 0;
+      span {
+        font-weight: bold;
+      }
+    }
+    .demo {
+      height: 300px;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      margin-top: 20px;
+      display: flex;
+      .box {
+        width: 100px;
+        height: 100px;
+        background: pink;
+        border: 1px solid #000;
+        box-sizing: border-box;
+      }
+      :nth-child(even) {
+        background: skyblue;
+      }
     }
   }
-  .demo {
-    width: 100%;
-    height: 300px;
-    box-sizing: border-box;
-    border: 1px solid #000;
-    margin-top: 20px;
-    display: flex;
-    .box {
-      width: 100px;
-      height: 100px;
-      background: pink;
-      border: 1px solid #000;
+  .code {
+    flex: 1;
+    .demo1 {
+      width: 100%;
+      height: 300px;
       box-sizing: border-box;
-    }
-    :nth-child(even) {
-      background: skyblue;
-    }
-  }
-  .demo1 {
-    width: 100%;
-    height: 300px;
-    box-sizing: border-box;
-    border: 1px solid #000;
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    .box1 {
-      background: pink;
-      flex: 0 0 calc(90% / 6); // 对剩余空间的（放大、缩小、初始大小比例）
-      height: 100px;
-      margin-right: calc(10% / 6);
-      margin-top: 10px;
       border: 1px solid #000;
-      box-sizing: border-box;
-    }
-    :nth-child(even) {
-      background: skyblue;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      .box1 {
+        background: pink;
+        flex: 0 0 calc(90% / 6); // 对剩余空间的（放大、缩小、初始大小比例）
+        height: 100px;
+        margin-right: calc(10% / 6);
+        margin-top: 10px;
+        border: 1px solid #000;
+        box-sizing: border-box;
+      }
+      :nth-child(even) {
+        background: skyblue;
+      }
     }
   }
 }

@@ -50,6 +50,7 @@ export default {
   methods: {
     init (path) {
       console.log('path1:', path)
+      console.log('htt', `https://mashize-m.github.io/vue2/#${path}/index.vue`)
       fetch(`https://mashize-m.github.io/vue2/#${path}/index.vue`).then(response => {
         response.text().then(r => {
           this.code = r

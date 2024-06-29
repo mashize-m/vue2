@@ -1,51 +1,84 @@
 <template>
-  <div class="page">
-    <p><b>grid基础属性</b></p>
-    <b>grid-template-columns：</b>
-    <el-select v-model="columns" placeholder="请选择">
-      <el-option v-for="k in columnsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ columnsInfo }}</span>
-    <br />
-    <b>grid-template-rows：</b>
-    <el-select v-model="rows" placeholder="请选择">
-      <el-option v-for="k in rowsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ rowsInfo }}</span>
-    <br />
-    <b>grid-gap：</b>
-    <el-select v-model="gridGap" placeholder="请选择">
-      <el-option v-for="k in gridGapOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ gridGapInfo }}</span>
-    <br />
-    <b>justify-items：</b>
-    <el-select v-model="justifyItems" placeholder="请选择">
-      <el-option v-for="k in justifyItemsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ justifyItemsInfo }}</span>
-    <br />
-    <b>align-items：</b>
-    <el-select v-model="alignItems" placeholder="请选择">
-      <el-option v-for="k in alignItemsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ alignItemsInfo }}</span>
-    <br />
-    <b>justify-content（水平）/align-content（垂直）：参数一致</b>
-    <el-select v-model="justifyContent" placeholder="请选择">
-      <el-option v-for="k in justifyContentOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
-    </el-select>
-    <span class="detail">{{ justifyContentInfo }}</span>
-    <br />
-
-    <div class="demo" :class="[columns, rows, gridGap, justifyItems, alignItems, justifyContent]">
-      <div class="box" v-for="(item, index) in count" :key="index">{{ item }}</div>
+  <div class="pagebox">
+    <div class="page">
+      <p><b>grid基础属性</b></p>
+      <div class="demo" :class="[columns, rows, gridGap, justifyItems, alignItems, justifyContent]">
+        <div class="box" v-for="(item, index) in count" :key="index">{{ item }}</div>
+      </div>
+      <p></p>
+      <b>grid-template-columns：</b>
+      <el-select v-model="columns" placeholder="请选择">
+        <el-option v-for="k in columnsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ columnsInfo }}</span>
+      <br />
+      <b>grid-template-rows：</b>
+      <el-select v-model="rows" placeholder="请选择">
+        <el-option v-for="k in rowsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ rowsInfo }}</span>
+      <br />
+      <b>grid-gap：</b>
+      <el-select v-model="gridGap" placeholder="请选择">
+        <el-option v-for="k in gridGapOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ gridGapInfo }}</span>
+      <br />
+      <b>justify-items：</b>
+      <el-select v-model="justifyItems" placeholder="请选择">
+        <el-option v-for="k in justifyItemsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ justifyItemsInfo }}</span>
+      <br />
+      <b>align-items：</b>
+      <el-select v-model="alignItems" placeholder="请选择">
+        <el-option v-for="k in alignItemsOpts" :key="k.value" :label="k.label" :value="k.value"></el-option>
+      </el-select>
+      <span class="detail">{{ alignItemsInfo }}</span>
+      <br />
+      <b>justify-content（水平）/align-content（垂直）：参数一致</b>
+      <el-select v-model="justifyContent" placeholder="请选择">
+        <el-option
+          v-for="k in justifyContentOpts"
+          :key="k.value"
+          :label="k.label"
+          :value="k.value"
+        ></el-option>
+      </el-select>
+      <span class="detail">{{ justifyContentInfo }}</span>
+      <br />
     </div>
-
-    <p></p>
-    <b>特殊布局：元素的宽度固定，最大填充在行内(例如:元素宽度固定100px)</b>
-    <div class="demo1">
-      <div class="box1" v-for="(item, index) in count1" :key="index">{{ item }}</div>
+    <div class="code">
+      <p></p>
+      <b>特殊布局：元素的宽度固定，最大填充在行内(例如:元素宽度固定100px)</b>
+      <div class="demo1">
+        <div class="box1" v-for="(item, index) in count1" :key="index">{{ item }}</div>
+      </div>
+      <pre v-highlight>
+        <code>
+  .demo1 {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px 20px;
+    grid-auto-rows: 50px; // 隐士网格的行高。多余的网络，超出demo1盒子高度了
+    .box1 {
+      background: pink;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    :nth-child(even) {
+      background: skyblue;
+    }
+  }
+        </code>
+      </pre>
     </div>
   </div>
 </template>
@@ -197,27 +230,40 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.demo1 {
-  width: 100%;
-  height: 200px;
+.pagebox {
+  display: flex;
   box-sizing: border-box;
-  border: 1px solid #000;
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-gap: 10px 20px;
-  grid-auto-rows: 50px; // 隐士网格的行高。多余的网络，超出demo1盒子高度了
-  .box1 {
-    background: pink;
-    border: 1px solid #000;
+  gap: 50px;
+}
+.page {
+  flex: 1;
+  overflow: auto;
+}
+.code {
+  flex: 1;
+  .demo1 {
+    width: 100%;
+    height: 200px;
     box-sizing: border-box;
-    font-size: 50px;
-    font-weight: bold;
-  }
-  :nth-child(even) {
-    background: skyblue;
+    border: 1px solid #000;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px 20px;
+    grid-auto-rows: 50px; // 隐士网格的行高。多余的网络，超出demo1盒子高度了
+    .box1 {
+      background: pink;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    :nth-child(even) {
+      background: skyblue;
+    }
   }
 }
+
 .demo {
   width: 100%;
   height: 400px;

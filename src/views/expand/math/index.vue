@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button type="primary" @click="test">测试</el-button>
+    <el-button type="primary" @click="test">测试生成随机数学公式</el-button>
   </div>
 </template>
 
