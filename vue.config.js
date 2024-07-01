@@ -182,6 +182,11 @@ module.exports = {
       '/identity': {
         target: 'http://www.gaomi.gov.cn/ddydyzt',
         changeOrigin: true
+      },
+      // 中台接口
+      '/qyzznew': {
+        target: 'http://192.168.11.202:8080',
+        changeOrigin: true
       }
     }
   },
