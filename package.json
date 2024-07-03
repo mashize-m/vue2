@@ -47,7 +47,8 @@
     "vuedraggable": "^2.24.3",
     "vuex": "^3.4.0",
     "x-data-spreadsheet": "^1.1.9",
-    "xlsx": "^0.16.9"
+    "xlsx": "^0.16.9",
+    "xlsx-style": "^0.8.13"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.17",

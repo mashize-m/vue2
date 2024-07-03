@@ -111,7 +111,12 @@ module.exports = {
         })
       )
     }
-
+    // 修改xlsx-style包
+    config.externals = [
+      {
+        './cptable': 'var cptable'
+      }
+    ]
     // 复制拷贝文件
     config.plugins.push(
       new CopyWebpackPlugin([
